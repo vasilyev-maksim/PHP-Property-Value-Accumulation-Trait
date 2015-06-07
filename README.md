@@ -7,15 +7,15 @@ array getAccumulated(string $name [, array $args = [] [,int $order = 1 [,int $un
 ```
 If property's getter method is implemented *getAccumulated* method will use it to get poperty's value.
 *$args* array will be passed as arguments to the getter method.
-You can change accumulating order passing 1 (straight) or 0 (reverse) as *getAccumulated* method's third argument.
-Also you can specify whether to accumulate only unique values passing 1 as *getAccumulated* method's fourth argument.
+You can change accumulating order passing 1 (straight) or 0 (reverse) third argument.
+Also you can specify whether to accumulate only unique values passing 1 as fourth argument.
 
 ## Example
 ```
 class A{
 	use PropertyValueAccumulation;
 
-	protected static $arrayProp = ['a','b'];
+	protected static $arrayProp = ['a','b','c'];
 	protected static $arrayPropWithGetter = [1,2];
 	protected static $strProp = 'x';
 
@@ -46,9 +46,9 @@ class C extends B{
 	}
 }
 
-print_r(C::getAccumulated('arrayProp'));
-print_r(C::getAccumulated('strProp',0));
-print_r(C::getAccumulated('arrayPropWithGetter',1,['test']));
+print_r(C::getAccumulated('arrayProp', [], 1, 1));
+print_r(C::getAccumulated('strProp', [], 0));
+print_r(C::getAccumulated('arrayPropWithGetter', ['test'], 1));
 ```
 ### Output:
 ```
