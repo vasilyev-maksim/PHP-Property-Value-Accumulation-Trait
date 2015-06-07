@@ -1,4 +1,4 @@
-# Accumulated property value retrieve functionality providing trait on PHP. 
+# Accumulated property value retrieve functionality providing trait on PHP
 This trait provides an ability to get property value accumulated from the same properties of parent classes.
 
 ## Example
@@ -41,9 +41,7 @@ print_r(C::getAccumulated('arrayProp'));
 print_r(C::getAccumulated('strProp',0));
 print_r(C::getAccumulated('arrayPropWithGetter',1,['test']));
 ```
-
 ### Output:
-
 ```
 Array
 (
@@ -70,3 +68,4 @@ Array
    [5] => 2_test_TEST
 )
 ```
+You can find the same code in *test.php* file.
