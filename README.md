@@ -1,5 +1,5 @@
 # Accumulated property value retrieve functionality providing trait on PHP
-This trait provides an ability to get property value accumulated from the same properties of parent classes.
+This trait provides an ability to get static property value accumulated from the same properties of parent classes.
 
 ## Example
 ```
