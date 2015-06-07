@@ -4,7 +4,7 @@ require ('PropertyValueAccumulation.php');
 class A{
 	use PropertyValueAccumulation;
 
-	protected static $arrayProp = ['a','b'];
+	protected static $arrayProp = ['a','b','c'];
 	protected static $arrayPropWithGetter = [1,2];
 	protected static $strProp = 'x';
 
@@ -36,9 +36,9 @@ class C extends B{
 }
 
 echo "<pre>";
-print_r(C::getAccumulated('arrayProp'));
-print_r(C::getAccumulated('strProp',0));
-print_r(C::getAccumulated('arrayPropWithGetter',1,['test']));
+print_r(C::getAccumulated('arrayProp', [], 1, 1));
+print_r(C::getAccumulated('strProp', [], 0));
+print_r(C::getAccumulated('arrayPropWithGetter', ['test'], 1));
 
 /*
 ---------------------------

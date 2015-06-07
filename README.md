@@ -1,6 +1,15 @@
 # Accumulated property value retrieve functionality providing trait on PHP
 This trait provides an ability to get static property value accumulated from the same properties of parent classes.
 
+*PropertyValueAccumulation::getAccumulated()* is the only public method to use.
+```
+array getAccumulated(string $name [, array $args = [] [,int $order = 1 [,int $uniqueValues = 0]]])
+```
+If property's getter method is implemented *getAccumulated* method will use it to get poperty's value.
+*$args* array will be passed as arguments to the getter method.
+You can change accumulating order passing 1 (straight) or 0 (reverse) as *getAccumulated* method's third argument.
+Also you can specify whether to accumulate only unique values passing 1 as *getAccumulated* method's fourth argument.
+
 ## Example
 ```
 class A{
